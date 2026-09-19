@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIUM Energy Club | Official Website</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-dark: #0a0f1d;
+            --bg-card: #131b2e;
+            --bg-card-hover: #1a253e;
+            --primary-emerald: #10b981;
+            --primary-glow: rgba(16, 185, 129, 0.25);
+            --secondary-cyan: #06b6d4;
+            --accent-gold: #f59e0b;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border-glow: rgba(255, 255, 255, 0.08);
+            --card-radius: 20px;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAVIGATION */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border-glow);
+            padding: 1rem 0;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 44px;
+            height: 44px;
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-cyan));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0f1d;
+            font-size: 1.4rem;
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-weight: 800;
+            font-size: 1.25rem;
+            letter-spacing: -0.5px;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .logo-title span {
+            color: var(--primary-emerald);
+        }
+
+        .logo-sub {
+            font-size: 0.68rem;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-main);
+        }
+
+        .btn-join {
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-cyan));
+            color: #0a0f1d !important;
+            font-weight: 700 !important;
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px var(--primary-glow);
+            transition: var(--transition-smooth) !important;
+        }
+
+        .btn-join:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 10rem 2rem 6rem;
+            max-width: 1280px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(16, 185, 129, 0.1);
+            border: 1px solid rgba(16, 185, 129, 0.3);
+            color: var(--primary-emerald);
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(180deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-title span {
+            background: linear-gradient(135deg, var(--primary-emerald), var(--secondary-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            max-width: 720px;
+            margin: 0 auto 2.5rem;
+            color: var(--text-muted);
+            font-size: 1.15rem;
+        }
+
+        .hero-cta {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-emerald), #059669);
+            color: #fff;
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+            box-shadow: 0 4px 20px var(--primary-glow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-glow);
+            color: var(--text-main);
+            padding: 0.8rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* SECTION COMMON STYLING */
+        section {
+            padding: 5rem 2rem;
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 0.8rem;
+        }
+
+        .section-desc {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* MAINBOARD GRID & CARDS */
+        .board-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+        }
+
+        .member-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-glow);
+            border-radius: var(--card-radius);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16, 185, 129, 0.4);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .member-img-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 110%; /* Aspect ratio */
+            overflow: hidden;
+            background: #1e293b;
+        }
+
+        .member-img-wrapper img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .member-card:hover .member-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .role-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(10, 15, 29, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-glow);
+            color: var(--primary-emerald);
+            padding: 0.3rem 0.8rem;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            z-index: 2;
+        }
+
+        .member-info {
+            padding: 1.5rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .member-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.3rem;
+            color: #fff;
+        }
+
+        .member-position {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: var(--secondary-cyan);
+            font-size: 1.05rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .member-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border-glow);
+            padding-top: 1rem;
+            margin-top: 0.5rem;
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .pic-tag {
+            background: rgba(6, 182, 212, 0.1);
+            color: var(--secondary-cyan);
+            padding: 0.2rem 0.6rem;
+            border-radius: 6px;
+            font-weight: 600;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #060913;
+            border-top: 1px solid var(--border-glow);
+            padding: 4rem 2rem 2rem;
+            margin-top: 4rem;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-muted);
+            margin-top: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .footer-heading {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-emerald);
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid var(--border-glow);
+            padding-top: 2rem;
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-group">
+                <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                <div class="logo-text">
+                    <span class="logo-title">IIUM <span>ENERGY</span> CLUB</span>
+                    <span class="logo-sub">International Islamic University Malaysia</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#vision">Vision & Mission</a></li>
+                <li><a href="#mainboard">Mainboard</a></li>
+                <li><a href="#initiatives">Initiatives</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a href="#join" class="btn-join">Join Us <i class="fa-solid fa-arrow-right"></i></a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-badge"><i class="fa-solid fa-leaf"></i> Empowering Sustainable Leaders</div>
+        <h1 class="hero-title">Pioneering Clean Energy & <span>Sustainability</span> at IIUM</h1>
+        <p class="hero-desc">The official student organization driving energy literacy, technological innovation, green campus solutions, and sustainable development initiatives.</p>
+        <div class="hero-cta">
+            <a href="#join" class="btn-primary">Become a Member <i class="fa-solid fa-user-plus"></i></a>
+            <a href="#mainboard" class="btn-secondary">Meet the Team <i class="fa-solid fa-users"></i></a>
+        </div>
+    </section>
+
+    <!-- MAINBOARD EXECUTIVE COMMITTEE -->
+    <section id="mainboard">
+        <div class="section-header">
+            <h2 class="section-title">Executive Committee</h2>
+            <p class="section-desc">The dedicated student leaders driving IIUM Energy Club's strategic direction, technical divisions, and sustainable projects.</p>
+        </div>
+
+        <div class="board-grid">
+            <!-- PRESIDENT -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge">President</span>
+                    <img src="adam.pres.png" alt="Zuhdi Adam Bin Zufli">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">ADAM</h3>
+                        <p class="member-position">President</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Zuhdi Adam Bin Zufli</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Matric No: <strong>2415211</strong></span>
+                        <span class="pic-tag">PIC Alt Fuel</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VICE PRESIDENT 1 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: var(--secondary-cyan);">Vice President 1</span>
+                    <img src="azim.vp1.png" alt="Azim Muzaffar Bin Mohd Danir">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">AZIM</h3>
+                        <p class="member-position">Vice President 1</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Azim Muzaffar Bin Mohd Danir</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Matric No: <strong>2417265</strong></span>
+                        <span class="pic-tag">PIC Power</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- VICE PRESIDENT 2 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: #ef4444;">Vice President 2</span>
+                    <img src="haq.vp2.png" alt="Muhammad Haqimi Bin Ramli">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">HAQIMI</h3>
+                        <p class="member-position">Vice President 2</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Muhammad Haqimi Bin Ramli</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Matric No: <strong>2217543</strong></span>
+                        <span class="pic-tag">PIC Efficiency</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECRETARY 1 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: var(--accent-gold);">Secretary 1</span>
+                    <img src="irma.sr1.png" alt="Nur Irma Hazwani">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">IRMA</h3>
+                        <p class="member-position">Secretary 1</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Nur Irma Hazwani</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Executive Admin</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECRETARY 2 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: #3b82f6;">Secretary 2</span>
+                    <img src="auni.sr2.png" alt="Auni Insyirah">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">AUNI</h3>
+                        <p class="member-position">Secretary 2</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Auni Insyirah</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Documentation Lead</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FINANCIAL CONTROLLER 1 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: #a855f7;">FC 1</span>
+                    <img src="aiman.fc1.png" alt="Aiman Bin Ahmad">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">AIMAN</h3>
+                        <p class="member-position">Financial Controller 1</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Aiman Bin Ahmad</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Treasury Lead</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FINANCIAL CONTROLLER 2 -->
+            <div class="member-card">
+                <div class="member-img-wrapper">
+                    <span class="role-badge" style="color: #ec4899;">FC 2</span>
+                    <img src="fatimah.fc2.png" alt="Fatimah Az-Zahra">
+                </div>
+                <div class="member-info">
+                    <div>
+                        <h3 class="member-name">FATIMAH</h3>
+                        <p class="member-position">Financial Controller 2</p>
+                        <p style="font-size: 0.88rem; color: var(--text-muted);">Fatimah Az-Zahra</p>
+                    </div>
+                    <div class="member-meta">
+                        <span>Sponsorship & Budget</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo-group">
+                    <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+                    <div class="logo-text">
+                        <span class="logo-title">IIUM <span>ENERGY</span> CLUB</span>
+                    </div>
+                </a>
+                <p>Driving sustainable energy awareness, innovation, and leadership across the International Islamic University Malaysia.</p>
+            </div>
+            <div>
+                <h4 class="footer-heading">Quick Links</h4>
+                <ul class="footer-links">
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#mainboard">Executive Team</a></li>
+                    <li><a href="#initiatives">Projects & Initiatives</a></li>
+                    <li><a href="#faq">Frequently Asked Questions</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="footer-heading">Connect With Us</h4>
+                <p style="color: var(--text-muted); font-size: 0.9rem;">Kulliyyah of Engineering, IIUM Gombak Campus, 53100 Kuala Lumpur.</p>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; IIUM Energy Club. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
